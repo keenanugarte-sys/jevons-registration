@@ -292,7 +292,7 @@
       <p class="section-label">Why you're coming</p>
       <div class="section-body">
         <div class="field" data-field="questions">
-          <label>What questions or topics do you want addressed at this session? <span class="req">*</span></label>
+          <label>What questions or topics do you want addressed at this session? <span class="opt">optional</span></label>
           <textarea name="questions" placeholder="e.g. How should BPO firms budget for AI tooling vs. headcount over the next 3 years?"></textarea>
           <p class="err">Please share a question or topic.</p>
         </div>
@@ -362,7 +362,7 @@
     }
     function validate(data) {
       let ok = true;
-      const requiredText = ['fullName','company','role','email','questions'];
+      const requiredText = ['fullName','company','role','email'];
       requiredText.forEach(key => { if (!data[key] || data[key].trim() === '') { markInvalid(key); ok = false; } });
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (data.email && !emailPattern.test(data.email)) { markInvalid('email'); ok = false; }
@@ -419,4 +419,3 @@
   </script>
 </body>
 </html>
-

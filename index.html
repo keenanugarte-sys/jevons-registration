@@ -301,17 +301,17 @@
       <p class="section-label">A bit more context</p>
       <div class="section-body">
         <div class="field" data-field="industry">
-          <label>Industry <span class="req">*</span></label>
+          <label>Industry <span class="opt">optional</span></label>
           <input type="text" name="industry" placeholder="e.g. IT-BPM, Real Estate, Venture Capital" class="w-md">
           <p class="err">Please enter your industry.</p>
         </div>
         <div class="field" data-field="experience">
-          <label>Years of experience <span class="req">*</span></label>
+          <label>Years of experience <span class="opt">optional</span></label>
           <input type="text" name="experience" placeholder="e.g. 8" class="w-xs">
           <p class="err">Please enter your years of experience.</p>
         </div>
         <div class="field" data-field="referral">
-          <label>How did you hear about this event? <span class="req">*</span></label>
+          <label>How did you hear about this event? <span class="opt">optional</span></label>
           <input type="text" name="referral" placeholder="e.g. LinkedIn, referred by a friend" class="w-md">
           <p class="err">Please let us know how you heard about the event.</p>
         </div>
@@ -362,7 +362,7 @@
     }
     function validate(data) {
       let ok = true;
-      const requiredText = ['fullName','company','role','email','questions','industry','experience','referral'];
+      const requiredText = ['fullName','company','role','email','questions'];
       requiredText.forEach(key => { if (!data[key] || data[key].trim() === '') { markInvalid(key); ok = false; } });
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (data.email && !emailPattern.test(data.email)) { markInvalid('email'); ok = false; }
